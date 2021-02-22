@@ -1,13 +1,9 @@
+<app-header (featuredSelected)="onNavigate($event)"></app-header>
 <div class="container">
-  <app-cockpit 
-    (serverCreated)="onServerAdded($event)"
-    (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
-  <hr>
   <div class="row">
-    <div class="col-xs-12">
-      <app-server-element 
-        *ngFor="let serverElement of serverElements"
-        [element]="serverElement"></app-server-element>
+    <div class="col-md-12">
+      <app-recipes *ngIf="loadedFeatured === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeatured === 'shopping'"></app-shopping-list>
     </div>
   </div>
 </div>

@@ -6,22 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements = [];
+  loadedFeatured = 'recipe';
 
-  onServerAdded(newServer: {name: string, content: string}) {
-    this.serverElements.push({
-      type: 'server',
-      name: newServer.name,
-      content: newServer.content
-    });
+  onNavigate(feature: string) {
+    this.loadedFeatured = feature;
   }
-
-  onBlueprintAdded(newBlueprint: {name: string, content: string}) {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: newBlueprint.name,
-      content: newBlueprint.content
-    });
-  }
-  
 }
