@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form ngForm (ngSubmit)="onSubmit(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name">Name</label>
@@ -8,7 +8,16 @@
             type="text"
             id="name"
             class="form-control"
-            #nameInput>
+            ngModel
+            name="name"
+            required
+            #name="ngModel"
+          />
+          <span
+            *ngIf="name.invalid && name.touched"
+            class="help-block"
+            >Name is required</span
+          >
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
@@ -17,14 +26,23 @@
             id="amount"
             min="0"
             class="form-control"
-            #amountInput>
+            ngModel
+            name="amount"
+            #amount="ngModel"
+            required
+          />
+          <span
+            *ngIf="amount.invalid && amount.touched"
+            class="help-block"
+            >Amount is required</span
+          >
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success" type="submit" (click)="onAddItem()">Add</button>
-          <button class="btn btn-danger" type="button">Delete</button>
-          <button class="btn btn-primary" type="button">Clear</button>
+          <button [disabled]="f.invalid" class="btn btn-success" type="submit">Add</button>
+          <button [disabled]="name.invalid" class="btn btn-danger" type="button" (click)="onDelete(name)">Delete</button>
+          <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
         </div>
       </div>
     </form>

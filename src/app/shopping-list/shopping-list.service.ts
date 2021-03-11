@@ -25,4 +25,15 @@ export class ShoppingListService {
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
+
+  clearIngredients() {
+    this.ingredients = [];
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  deleteIngredient(ingredientName: string) {
+    this.ingredients = this.ingredients.filter(i => i.name !== ingredientName);
+
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
 }
