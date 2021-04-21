@@ -30,6 +30,7 @@
             name="amount"
             #amount="ngModel"
             required
+            pattern="^[1-9]+[0-9]*$"
           />
           <span
             *ngIf="amount.invalid && amount.touched"
@@ -40,9 +41,9 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button [disabled]="f.invalid" class="btn btn-success" type="submit">Add</button>
-          <button [disabled]="name.invalid" class="btn btn-danger" type="button" (click)="onDelete(name)">Delete</button>
-          <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+          <button [disabled]="f.invalid" class="btn btn-success" type="submit">{{isEditMode ? 'Edit': 'Add'}}</button>
+          <button *ngIf="isEditMode" [disabled]="name.invalid" class="btn btn-danger ml-3" type="button" (click)="onDelete(name)">Delete</button>
+          <button class="btn btn-primary ml-3" type="button" (click)="onClear()">Clear</button>
         </div>
       </div>
     </form>
