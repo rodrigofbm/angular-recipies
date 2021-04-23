@@ -1,3 +1,4 @@
+import { DataStorageService } from './../shared/data-storage.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Injectable, Input } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -56,6 +57,11 @@ export class RecipeService {
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
+  }
+
+  fetchRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.onRecipesChanged.next(this.recipes.slice());
   }
 
   deleteRecipe(id: number) {
