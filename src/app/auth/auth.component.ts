@@ -46,6 +46,10 @@ export class AuthComponent {
     form.reset();
   }
 
+  onCloseAlertModal() {
+    this.errorMessage = null;
+  }
+
   onSwitchMode() {
     this.isSignin = !this.isSignin;
   }

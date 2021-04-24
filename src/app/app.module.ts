@@ -19,6 +19,7 @@ import { RescipeStartComponent } from './recipes/rescipe-start/rescipe-start.com
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { AuthComponent } from './auth/auth.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     RecipeEditComponent,
     AuthComponent,
     SpinnerComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
