@@ -1,4 +1,5 @@
 # MyFirstApp
+Try it: [Click here](https://recipes-a7ebc.web.app/recipes)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
