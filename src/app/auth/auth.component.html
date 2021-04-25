@@ -16,9 +16,9 @@
         <label for="password">Password</label>
         <input class="form-control" type="password" ngModel name="password" id="password" required>
       </div>
-      <button class="btn btn-primary" type="submit" [disabled]="authForm.invalid">{{isSignin ? 'Sign In' : 'Sign Up'}}</button>
+      <button class="btn btn-primary" type="submit" [disabled]="authForm.invalid">{{isSignIn ? 'Sign In' : 'Sign Up'}}</button>
       |
-      <button class="btn btn-primary" type="button" (click)="onSwitchMode()" >Switch to {{isSignin  ? 'Sign Up' : 'Sign In'}}</button>
+      <button class="btn btn-primary" type="button" (click)="onSwitchMode()" >Switch to {{isSignIn  ? 'Sign Up' : 'Sign In'}}</button>
     </form>
   </div>
 </div>

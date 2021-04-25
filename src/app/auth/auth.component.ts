@@ -11,7 +11,7 @@ import { AuthenticationResponse, AuthService } from './auth.service';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent {
-  isSignin = false;
+  isSignIn = true;
   isLoading = false;
   errorMessage = null;
 
@@ -25,7 +25,7 @@ export class AuthComponent {
     let sign$: Observable<AuthenticationResponse>;
     this.isLoading = true;
 
-    if (!this.isSignin) {
+    if (!this.isSignIn) {
       sign$ = this.authService.signUp(form.value.email, form.value.password);
     } else {
       sign$ = this.authService.signIn(form.value.email, form.value.password);
@@ -51,6 +51,6 @@ export class AuthComponent {
   }
 
   onSwitchMode() {
-    this.isSignin = !this.isSignin;
+    this.isSignIn = !this.isSignIn;
   }
 }
